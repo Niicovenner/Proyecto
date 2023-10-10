@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVO Sistem Admin</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="estilos.css">
+    
+    <!-- alerta-->
+    <script  src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!--menu-->
+    <div class="sm-12">
+        <nav class="navbar navbar-expand-lg navbar-light navcolor">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="noticias.html">Noticias l</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sacramentos.html">Sacramentos l</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="quienesomos.html">Quienes somos l</a>
+            </li>
+            </ul>
+        </div>
+        </nav>
+    </div><br>
+
+    <div class="container">
+        <label for="tipoCertificado">Seleccione el tipo de certificado:</label>
+        <select id="tipoCertificado">
+            <option value="certificadoBautizo">Certificado de Bautizo</option>
+            <option value="certificadoMatrimonio">Certificado de Matrimonio</option>
+            <option value="certificadoConfirmacion">Certificado de Confirmación</option>
+        </select>
+        <br><br>
+        <button type="button" class="btn btn-warning" onclick="descargarDocumento('URL_DEL_CERTIFICADO')">Descargar Documento</button>
+    </div>
+
+    <script>
+        // Función para simular una alerta de descarga
+        function mostrarAlertaDescarga() {
+            alert('El documento se ha descargado correctamente.');
+        }
+
+        // Función para descargar el documento cuando se hace clic en el botón
+        function descargarDocumento(urlDocumento) {
+            // Crea un elemento de enlace invisible
+            var enlace = document.createElement('a');
+            enlace.href = urlDocumento;
+            enlace.target = '_blank'; // Abre el enlace en una nueva ventana/tabla
+            enlace.download = 'nombre_del_documento.pdf'; // Nombre del archivo a descargar
+
+            // Simula un clic en el enlace para iniciar la descarga
+            enlace.click();
+
+            // Muestra la alerta después de la descarga
+            mostrarAlertaDescarga();
+        }
+    </script>
+
+
+</body>
+
+</html>

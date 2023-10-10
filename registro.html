@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVO Sistem Admin</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" href="estilos.css">
+    
+    <!-- alerta-->
+    <script  src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <title>Validación de Contraseña</title>
+    <script>
+        function validarContraseña() {
+            var contraseña = document.getElementById("contraseña").value;
+            
+            if (contraseña.length <= 8) {
+                var contieneMayuscula = /[A-Z]/.test(contraseña);
+                var contieneMinuscula = /[a-z]/.test(contraseña);
+
+                if (contieneMayuscula && contieneMinuscula) {
+                    alert("Contraseña válida");
+                } else {
+                    alert("La contraseña debe contener al menos una letra mayúscula y una letra minúscula.");
+                }
+            } else {
+                alert("La contraseña debe tener un máximo de 8 caracteres.");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+   
+     <!--menu-->
+     <div class="sm-12">
+        <nav class="navbar navbar-expand-lg navbar-light navcolor">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="noticias.html">Noticias l</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sacramentos.html">Sacramentos l</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="quienesomos.html">Quienes somos l</a>
+            </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+    
+    <!--formulario-->
+    <br><div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4"> <h3>Registrarse</h3></div>
+            <div class="col-sm-4"></div>
+        </div><br>
+    </div>
+    <div class="container">
+        <title class="center">Formulario</title>
+        <div class="container" id="formulario">
+            <div class="row">
+<!--  **********************************************************************************************  -->
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Nombre</label>
+                        <input type="text" class="form-control" id="usr">
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+<!--  **********************************************************************************************  -->
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Primer Apellido</label>
+                        <input type="text" class="form-control" id="usr">
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+<!--  **********************************************************************************************  -->                
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Segundo Apellido</label>
+                        <input type="text" class="form-control" id="usr">
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+<!--  **********************************************************************************************  -->
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="date">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="date" max="2023-01-01">
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+<!--  **********************************************************************************************  -->
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" class="form-control" id="direccion">
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+<!--  **********************************************************************************************  -->
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="mail">Correo</label>
+                        <input type="mail" class="form-control" id="mail">
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+<!--  **********************************************************************************************  -->
+
+
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="telefono">Número de Teléfono</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <select class="custom-select" id="prefijo"></select>
+                            </div>
+                            <input type="tel" class="form-control" id="telefono">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+                    
+
+
+
+<!--  **********************************************************************************************  -->
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <form>
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" class="form-control" id="contraseña" name="contraseña"><br>
+                        
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <input type="button" class="btn btn-warning" value="Validar" onclick="validarContraseña()">
+                </div><br>
+
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="btn-crear-cuenta">
+                        <button class="btn btn-warning" onclick="registra()">Registrarse</button>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+                <br>
+                <br>
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <P>¿Ya tienes cuenta? <a href="log.html">Inicia sesión</a><br>
+                        Acceder como<a href="index.html"> Invitado</a></P>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>   
+
+   <script>
+        function registra (){
+            swal({
+                title:"Se ha registrado con exito",
+                icon: "success",
+            }).then(function(){
+                window.location = "ingresar.html";      
+            });
+    }
+   </script>
+  
+  <script>
+    // Función para cargar la lista de prefijos de países desde una API
+    function cargarPrefijosPaises() {
+        var selectPrefijo = document.getElementById('prefijo');
+        fetch('https://numverify.com/documentation')
+            .then(response => response.json())
+            .then(data => {
+                // Verifica si "data" es un array
+                if (Array.isArray(data)) {
+                    // Filtra los objetos que tienen una propiedad "name" válida
+                    var datosFiltrados = data.filter(item => typeof item.name === 'string');
+                    // Ordena los datos filtrados alfabéticamente
+                    datosFiltrados.sort((a, b) => a.name.localeCompare(b.name));
+                    // Crear opciones de selección para cada prefijo de país
+                    datosFiltrados.forEach(prefijo => {
+                        var option = document.createElement('option');
+                        option.value = prefijo.code; // Código de prefijo
+                        option.text = prefijo.name; // Nombre de país
+                        selectPrefijo.appendChild(option);
+                    });
+                }
+            })
+            .catch(error => console.error('Error al cargar los prefijos de países:', error));
+    }
+
+    // Cargar la lista de prefijos de países al cargar la página
+    window.addEventListener('load', cargarPrefijosPaises);
+</script>
+
+
+</body>
+
+</html>

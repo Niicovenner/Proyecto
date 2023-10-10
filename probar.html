@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validación de Contraseña</title>
+    <script>
+        function validarContraseña() {
+            var contraseña = document.getElementById("contraseña").value;
+            
+            if (contraseña.length <= 8) {
+                var contieneMayuscula = /[A-Z]/.test(contraseña);
+                var contieneMinuscula = /[a-z]/.test(contraseña);
+
+                if (contieneMayuscula && contieneMinuscula) {
+                    alert("Contraseña válida");
+                } else {
+                    alert("La contraseña debe contener al menos una letra mayúscula y una letra minúscula.");
+                }
+            } else {
+                alert("La contraseña debe tener un máximo de 8 caracteres.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña">
+        <input type="button" value="Validar" onclick="validarContraseña()">
+    </form>
+</body>
+</html>
